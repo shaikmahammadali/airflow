@@ -35,7 +35,7 @@ with DAG(
     dag_id="our_dag_with_python_operator_v1",
     default_args=default_args,
     start_date=datetime(2024,6,25,5),
-    schedule_interval='daily'
+    schedule_interval='@daily'
 
 ) as dag :
     

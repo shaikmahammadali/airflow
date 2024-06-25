@@ -7,7 +7,13 @@ default_args={
     "retry_delay": timedelta(seconds=2)
 }
 
-@dag()
+@dag(
+        dag_id="dag_with_taskflow_api",
+        default_args=default_args,
+        start_date=datetime(2024,6,20),
+        schedule_interval="0 4 * * *"
+        
+)
 def hello_world_etl():
     
     @task(multiple_outputs=True)
